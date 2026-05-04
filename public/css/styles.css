@@ -36,11 +36,15 @@ button, .btn-link {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background: #f160a9;
+    background: #2c29ff;
     color: white;
     text-decoration: none;
     display: inline-block;
     margin-right: 6px;
+}
+
+#CategorieBouton {
+     background: #f160a9;
 }
 
 button.danger {
