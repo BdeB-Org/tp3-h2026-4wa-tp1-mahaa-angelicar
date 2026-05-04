@@ -13,11 +13,10 @@ const utilisateurRoutes = require("./routes/utilisateurRoutes");
 const categorieRoutes = require("./routes/categorieRoutes");
 
 //Angelica
-// app.use("/", utilisateurRoutes);
 app.use('/api/utilisateur', utilisateurRoutes);
 
 //Maha
-app.use("/", categorieRoutes);
+app.use('/api/categorie', categorieRoutes);
 
 
 
