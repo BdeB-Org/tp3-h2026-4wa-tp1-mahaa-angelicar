@@ -26,13 +26,13 @@ async function chargerutilisateur() {
         data.forEach(utilisateur => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td>${utilisateur.id}</td>
+                <td>${utilisateur.id_utilisateur}</td>
                 <td>${escapeHtml(utilisateur.nom)}</td>
                 <td>${escapeHtml(utilisateur.prenom)}</td>
                 <td>${escapeHtml(utilisateur.courriel)}</td>
                 <td>
-                    <a class="btn-link" href="/edit.html?id=${utilisateur.id}">Modifier</a>
-                    <button class="danger" onclick="supprimerUtilisateur(${utilisateur.id})">Supprimer</button>
+                    <a class="btn-link" href="/editUtilisateur.html?id=${utilisateur.id_utilisateur}">Modifier</a>
+                    <button class="danger" onclick="supprimerUtilisateur(${utilisateur.id_utilisateur})">Supprimer</button>
                 </td>
             `;
             console.log(data)

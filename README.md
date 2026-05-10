@@ -1,1 +1,10 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/JQR2ZGfF)
+Projet Node.js + SQLite + JWT
+
+Compte de connexion :
+- username : admin
+- password : admin123
+
+Commande d'exécution :
+1) npm install
+2) npm start
+3) Ouvrir http://localhost:3000
