@@ -1,8 +1,12 @@
 
+//Angelica Roldan Chimal
+
+// Récupère les éléments HTML du formulaire, du tableau et du message
 const form = document.getElementById('formAjout');
 const tbody = document.getElementById('tbodyUtilisateurs');
 const message = document.getElementById('message');
 
+// Fonction pour afficher un message à l'utilisateur
 function showMessage(text, isError = false) {
     message.innerHTML = `<div class="message ${isError ? 'error' : ''}">${text}</div>`;
 }
@@ -16,6 +20,8 @@ function escapeHtml(value) {
         .replaceAll("'", '&#039;');
 }
 
+
+// Fonction asynchrone pour charger tous les utilisateurs depuis l'API
 async function chargerutilisateur() {
     try {
         const res = await apiFetch('/api/utilisateur');
@@ -31,7 +37,10 @@ async function chargerutilisateur() {
                 <td>${escapeHtml(utilisateur.prenom)}</td>
                 <td>${escapeHtml(utilisateur.courriel)}</td>
                 <td>
+                    <!-- Lien pour modifier l'utilisateur -->
                     <a class="btn-link" href="/editUtilisateur.html?id=${utilisateur.id_utilisateur}">Modifier</a>
+                    
+                    <!-- Bouton pour supprimer l'utilisateur -->
                     <button class="danger" onclick="supprimerUtilisateur(${utilisateur.id_utilisateur})">Supprimer</button>
                 </td>
             `;
@@ -39,10 +48,12 @@ async function chargerutilisateur() {
             tbody.appendChild(tr);
         });
     } catch (err) {
+        // affiche un message d'erreur si la requête échoue
         showMessage(err.message, true);
     }
 }
 
+// Événement déclenché lors de l'envoi du formulaire
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -51,6 +62,7 @@ form.addEventListener('submit', async (e) => {
     const courriel = document.getElementById('courriel').value.trim();
 
     try {
+        // Envoie une requête POST pour ajouter un utilisateur
          const res = await apiFetch('/api/utilisateur', {
             method: 'POST',
             body: JSON.stringify({ nom, prenom, courriel })
@@ -70,10 +82,13 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
+// Fonction pour supprimer un utilisateur
 async function supprimerUtilisateur(id) {
+    // demande de confirmation
     if (!confirm('Voulez-vous vraiment supprimer cet utilisateur ?')) return;
 
     try {
+        // envoie une requête DELETE à l'API
         const res = await apiFetch('/api/utilisateur/' + id, {
             method: 'DELETE'
         });
