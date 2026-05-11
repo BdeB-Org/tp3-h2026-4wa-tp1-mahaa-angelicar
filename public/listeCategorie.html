@@ -1,0 +1,39 @@
+<!-- Maha Al-Sadoon  -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des categories</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div>
+                <h1>Liste des categories</h1>
+                <p class="small">Modifier et supprimer des categories existants</p>
+            </div>
+            <div class="actions">
+                <a class="btn-link" href="/indexCategorie.html">Retour à l'ajout</a>
+                <button class="secondary" onclick="logout()">Déconnexion</button>
+            </div>
+        </div>
+
+        <div id="message"></div>
+
+         <table>
+            <thead>
+                <tr>
+                    <th>id de categorie</th>
+                    <th>nom de categorie</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyCategorie"></tbody>
+        </table>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/listeCategorie.js"></script>
+</body>
+</html>

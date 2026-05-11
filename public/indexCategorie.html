@@ -1,0 +1,46 @@
+<!-- Maha Al-Sadoon  -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des categories</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div>
+                <h1>Gestion des categories</h1>
+                <p class="small">Ajout et affichage dans un tableau</p>
+            </div>
+            <div class="actions">
+                <a class="btn-link" href="/listeCategorie.html">Voir la liste complète</a>
+                <a class="btn-link" href="/indexCategorie.html" id="CategorieBouton">Voir les categories</a>
+            </div>
+        </div>
+
+        <div id="message"></div>
+
+        <h2>Ajouter une categorie </h2>
+        <form id="formAjout">
+            <input type="text" id="id_categorie" placeholder="id" required>
+            <input type="text" id="nom_categorie" placeholder="Nom" required>
+            <button type="submit">Ajouter</button>
+        </form>
+
+        <h2>Ensemble des categorie</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>id de categorie</th>
+                    <th>nom de categorie</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyCategorie"></tbody>
+        </table>
+    </div>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/indexCategorie.js"></script>
+</body>
+</html>
